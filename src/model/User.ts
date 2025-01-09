@@ -1,5 +1,4 @@
 import mongoose, { type Document, Schema } from "mongoose"
-import type { Date } from "mongoose"
 
 export interface Message extends Document {
   content: string
