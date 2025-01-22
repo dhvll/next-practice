@@ -17,7 +17,7 @@ export async function sendVerificationEmail(
         otp: verifyCode,
       }),
     })
-    return { success: false, message: "Verification email successfully" }
+    return { success: true, message: "Verification email successfully" }
   } catch (error) {
     console.log("Error sending verification", error)
     return { success: false, message: "Failed to send verification email" }
