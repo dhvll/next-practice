@@ -139,9 +139,9 @@ export default function SignUpForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <Input {...field} placeholder="email" />
-                  <p className="text-muted text-gray-400 text-sm">
+                  {/* <p className="text-muted text-gray-400 text-sm">
                     We will send you a verification code
-                  </p>
+                  </p> */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -152,7 +152,7 @@ export default function SignUpForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Password</FormLabel>
-                  <Input {...field} placeholder="password" />
+                  <Input {...field} placeholder="password" type="password" />
                   <FormMessage />
                 </FormItem>
               )}
