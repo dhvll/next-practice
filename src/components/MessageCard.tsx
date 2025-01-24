@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import axios, { AxiosError } from "axios"
 import dayjs from "dayjs"
 import { X } from "lucide-react"
@@ -28,6 +27,7 @@ type MessageCardProps = {
 
 export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
   const { toast } = useToast()
+
   const handleDeleteConfirm = async () => {
     try {
       const response = await axios.delete<ApiResponse>(
@@ -47,6 +47,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
       })
     }
   }
+
   return (
     <Card className="card-bordered">
       <CardHeader>
