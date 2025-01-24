@@ -5,7 +5,7 @@ import { User } from "next-auth"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../auth/[...nextauth]/options"
 
-export async function GET(request: Request) {
+export async function GET() {
   await dbConnect()
 
   const session = await getServerSession(authOptions)
@@ -23,7 +23,7 @@ export async function GET(request: Request) {
       { $match: { _id: userId } },
       { $unwind: "$messages" },
       { $sort: { "messages.createdAt": -1 } },
-      { $group: { _id: "$_id", messages: { $push: "messages" } } },
+      { $group: { _id: "$_id", messages: { $push: "$messages" } } },
     ]).exec()
 
     if (!user || user.length === 0) {
